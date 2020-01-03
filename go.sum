@@ -3,8 +3,12 @@ github.com/libp2p/go-reuseport v0.0.1 h1:7PhkfH73VXfPJYKQ6JwS5I/eVcoyYi9IMNGc6FW
 github.com/libp2p/go-reuseport v0.0.1/go.mod h1:jn6RmB1ufnQwl0Q1f+YxAj8isJgDCQzaaxIFYDhcYEA=
 github.com/panjf2000/ants/v2 v2.2.2 h1:TWzusBjq/IflXhy+/S6u5wmMLCBdJnB9tPIx9Zmhvok=
 github.com/panjf2000/ants/v2 v2.2.2/go.mod h1:1GFm8bV8nyCQvU5K4WvBCTG1/YBFOD2VzjffD8fV55A=
+github.com/panjf2000/gnet v0.0.0-20191231084807-9b30e8c203bb h1:FmFSoF6ARM1cMnK6Qt4pcArORyxQldGHBi9hJOdS1+s=
+github.com/panjf2000/gnet v0.0.0-20191231084807-9b30e8c203bb/go.mod h1:lOfIuDS7Q5FFzuPiDsPvESywpPyYIi9/pSa9pbdYUls=
 github.com/panjf2000/gnet v1.0.0-rc.4 h1:kXOXCC60BkSd1OObcPGoPu+6EQbomL73RF+CHXS1DKI=
 github.com/panjf2000/gnet v1.0.0-rc.4/go.mod h1:OYcdgCx4Vhn5Tbrslc0TR3h0hwuCgSPyzyOCIxMRyFM=
+github.com/panjf2000/gnet v1.0.0-rc.4.0.20191231084807-9b30e8c203bb h1:JuxUmbLRMs7bd0faVd4/liDkszVIyVjd6vxHd1xqMwE=
+github.com/panjf2000/gnet v1.0.0-rc.4.0.20191231084807-9b30e8c203bb/go.mod h1:lOfIuDS7Q5FFzuPiDsPvESywpPyYIi9/pSa9pbdYUls=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
@@ -14,6 +18,7 @@ github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/valyala/bytebufferpool v1.0.0 h1:GqA5TC/0021Y/b9FG4Oi9Mr3q7XYx6KllzawFIhcdPw=
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
+github.com/xenbo/go_kfk_client v0.0.0-20200102125820-182ae5aa90db h1:vfUS9rBdb7xrWK6oqVaZHYTO9Hv6hVUT76vvtEc3WGU=
 github.com/xenbo/go_kfk_client v0.0.0-20200102125820-182ae5aa90db/go.mod h1:CAyPhLmz8p+LccvWCU+jhl/gLnV1BrxZ0M820wqQfQQ=
 golang.org/x/sys v0.0.0-20190228124157-a34e9553db1e/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20190405154228-4b34438f7a67 h1:1Fzlr8kkDLQwqMP8GxrhptBLqZG/EDpiATneiZHY998=
