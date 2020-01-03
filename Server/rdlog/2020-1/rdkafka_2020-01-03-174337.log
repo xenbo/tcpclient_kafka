@@ -1,0 +1,20 @@
+2020-01-03 17.43.37[INFO][Storage_t* get_db(const char*, unsigned int)]testKfk
+2020-01-03 17.43.37[INFO][Storage_t* get_db(const char*, unsigned int)]topic_cache/testKfk
+2020-01-03 17.43.37[INFO][int opdb::cursor_(std::map<std::basic_string<char>, std::basic_string<char> >&)]key:testKfk00000000000000000001,val:{"Topic":"testKfk","Body":"#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXx12131231231231__","Version":1,"Time":1578044497}
+2020-01-03 17.43.37[INFO][int opdb::cursor_(std::map<std::basic_string<char>, std::basic_string<char> >&)]key:~~zztestKfk,val:2
+2020-01-03 17.43.37[INFO][int Producer::create_producer(std::string)]192.168.1.172
+2020-01-03 17.43.37[INFO][int Producer::add_produce_topic(const string&)]testKfk
+2020-01-03 17.43.37[INFO][int Producer::send_msg(const string&, std::string, long long int)]testKfk,{"Topic":"testKfk","Body":"#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXx12131231231231__","Version":1,"Time":1578044497},-1
+2020-01-03 17.43.37[INFO][void re_send(const string&)]topic:testKfk00000000000000000001,msg:{"Topic":"testKfk","Body":"#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXx12131231231231__","Version":1,"Time":1578044497}
+2020-01-03 17.43.37[INFO][void recover()]topic_cache/testKfk
+2020-01-03 17.43.40[INFO][int opdb::getkey(const string&, std::string*)]~~zztestKfk,2
+2020-01-03 17.43.40[INFO][int storage_getkey(Storage_t*, const char*, int, void*, int)]rc:0,key:~~zztestKfk,val:2
+2020-01-03 17.43.40[INFO][int opdb::setkey0(const string&, const string&)]testKfk00000000000000000002,{"Topic":"testKfk","Body":"#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXx12131231231231__","Version":1,"Time":1578044620}
+2020-01-03 17.43.40[INFO][int opdb::setkey0(const string&, const string&)]~~zztestKfk,3
+2020-01-03 17.43.40[INFO][int opdb::delkey(const string&)]~~zztestKfk
+2020-01-03 17.43.40[INFO][int opdb::setkey0(const string&, const string&)]~~zztestKfk,3
+2020-01-03 17.43.40[INFO][int Producer::send_msg(const string&, std::string, long long int)]testKfk,{"Topic":"testKfk","Body":"#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXx12131231231231__","Version":1,"Time":1578044620},2
+2020-01-03 17.43.40[WARN][int opdb::delkey(const string&)]MDB_NOTFOUND:testKfk00000000000000000000
+2020-01-03 17.43.40[INFO][int opdb::delkey(const string&)]testKfk00000000000000000000
+2020-01-03 17.43.40[INFO][int send_msg_callback(const string&, long long int)]testKfk00000000000000000000
+2020-01-03 17.43.40[INFO][static void Producer::message_receipt_cbk(rd_kafka_t*, const rd_kafka_message_t*, void*)]Message delivered,len:106, offset: 79,msg:{"Topic":"testKfk","Body":"#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXx12131231231231__","Version":1,"Time":1578044497},nkey:0

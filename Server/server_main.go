@@ -38,20 +38,24 @@ func (cs *KRouterServer) OnInitComplete(srv gnet.Server) (action gnet.Action) {
 
 func (cs *KRouterServer) React(c gnet.Conn) (out []byte, action gnet.Action) {
 	if cs.async {
-		//data := append([]byte{}, c.ReadFrame()...)
-		//_ = cs.workerPool.Submit(func() {
-		//
-		//	m := &msg{}
-		//	json.Unmarshal(data, m)
-		//	_, ok := cs.topics[m.topic]
-		//	if !ok {
-		//		cs.kc.AddProduceTopic(m.topic)
-		//		cs.topics[m.topic] = true
-		//	}
-		//	cs.kc.SendMsgWithCache(m.topic, string(data))
-		//
-		//	c.AsyncWrite(data)
-		//})
+		data := append([]byte{}, c.ReadFrame()...)
+
+		if len(data) > 0 {
+			_ = cs.workerPool.Submit(func() {
+				m := &msg{}
+				json.Unmarshal(data, m)
+				_, ok := cs.topics[m.Topic]
+				if !ok && m.Topic != "" {
+					cs.kc.AddProduceTopic(m.Topic)
+					cs.topics[m.Topic] = true
+				}
+				if m.Topic != "" {
+					cs.kc.SendMsgWithCache(m.Topic, string(data))
+				}
+				c.AsyncWrite(data)
+			})
+		}
+
 	} else {
 		out = c.ReadFrame()
 		if len(out) > 0 {
@@ -118,5 +122,5 @@ func main() {
 	flag.Parse()
 
 	addr := fmt.Sprintf("tcp://:%d", port)
-	SvrRun(addr, true, false, nil)
+	SvrRun(addr, true, true, nil)
 }
