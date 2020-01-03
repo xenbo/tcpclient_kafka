@@ -54,15 +54,24 @@ func (cs *KRouterServer) React(c gnet.Conn) (out []byte, action gnet.Action) {
 		//})
 	} else {
 		out = c.ReadFrame()
-		m := &msg{}
-		json.Unmarshal(out, m)
-		_, ok := cs.topics[m.Topic]
-		if !ok && m.Version != 0 {
-			cs.kc.AddProduceTopic(m.Topic)
-			cs.topics[m.Topic] = true
+		if len(out) > 0 {
+			m := &msg{}
+			json.Unmarshal(out, m)
+			_, ok := cs.topics[m.Topic]
+			if !ok && m.Topic != "" {
+				cs.kc.AddProduceTopic(m.Topic)
+				cs.topics[m.Topic] = true
+			}
+			if m.Topic != "" {
+				cs.kc.SendMsgWithCache(m.Topic, string(out))
+			}
 		}
-		cs.kc.SendMsgWithCache(m.Topic, string(out))
 	}
+	return
+}
+
+func (cs *KRouterServer) OnClosed(c gnet.Conn, err error) (action gnet.Action) {
+	fmt.Println("fuck close", cs.topics)
 
 	return
 }
